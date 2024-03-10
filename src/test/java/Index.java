@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -13,11 +14,20 @@ public class Index {
     @BeforeClass
     public void setUp(){
         wd = new ChromeDriver();
-        wd.get("file:///C:/Users/simha/Downloads/21.index.html");
+        wd.get("C:/Users/marii/Downloads/21.index.html");
     }
 
-    @Test
 
+    @Test
+    public void tableTest(){
+        //Canada
+        WebElement canada = wd.findElement(By.cssSelector("tr:nth-child(3) td:last-child"));
+        WebElement canada1 = wd.findElement(By.xpath("//*[text()='Canada']"));
+        Assert.assertEquals(canada.getText(),"Canada");
+    }
+
+
+    @Test
     public void cssLocators(){
         //by tag name
         WebElement el = wd.findElement(By.tagName("button"));
@@ -45,7 +55,7 @@ public class Index {
         WebElement divEl = wd.findElement(By.cssSelector("[class='container']"));
         WebElement input = wd.findElement(By.cssSelector("[placeholder='Type your name']"));
         //start
-        WebElement input4 = wd.findElement(By.cssSelector("[placeholder ^6 = 'Type']"));
+        WebElement input4 = wd.findElement(By.cssSelector("[placeholder ^= 'Type']"));
         WebElement divEl1 = wd.findElement(By.cssSelector("[class ^= 'cont']"));
         //end
         WebElement input5 = wd.findElement(By.cssSelector("[placeholder $= 'name']"));
