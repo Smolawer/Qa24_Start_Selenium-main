@@ -28,9 +28,11 @@ public class HomeWork {
         WebElement div = wd.findElement(By.tagName("div"));
         WebElement div1 = wd.findElement(By.cssSelector("div"));
 
+
         WebElement h1 = wd.findElement(By.tagName("h1"));
         WebElement h1_2 = wd.findElement(By.cssSelector("h1"));
         WebElement h1_3 = wd.findElement(By.xpath("//h1"));
+        System.out.println();
 
 
         WebElement a = wd.findElement(By.tagName("a"));
